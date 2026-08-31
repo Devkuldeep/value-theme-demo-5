@@ -1,0 +1,77 @@
+@import './primitive-tokens.css';
+@import './semantic-tokens.css';
+@import './themes.css';
+@import './components.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: var(--border-color, var(--border-default));
+  }
+
+  html,
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-page);
+    color: var(--text-primary);
+    transition: background-color var(--transition-base), color var(--transition-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Scrollbars matching Panze Studio */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: var(--radius-full);
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Base Component Wrappers & Utilities (Panze Studio Skin) */
+.surface-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-card, 28px);
+  box-shadow: var(--shadow-panze-card, 0 8px 24px rgba(15, 23, 42, 0.035));
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.surface-card-interactive:hover {
+  background-color: var(--surface-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.primary-btn {
+  background-color: var(--pill-active-bg, #101728);
+  color: var(--pill-active-text, #ffffff);
+  border-radius: var(--radius-pill, 9999px);
+  padding: 9px 20px;
+  font-weight: 600;
+  box-shadow: var(--shadow-panze-pill, 0 4px 12px rgba(16, 23, 40, 0.15));
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.primary-btn:hover {
+  background-color: #1e293b;
+  transform: translateY(-1px);
+}

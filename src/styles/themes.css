@@ -1,0 +1,568 @@
+/* ==========================================================================
+   THEMES SYSTEM - VALUE CONSTRUCTIONS CRM v10
+   White Background Theme Architecture
+   All themes use clean pure white canvas (#ffffff) with theme-specific pastel
+   surface level hierarchy for borderless editorial design.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DEFAULT BLUE THEME (White Background + Royal Periwinkle)
+   -------------------------------------------------------------------------- */
+[data-theme="blue"],
+:root {
+   --color-background: #ffffff;
+   --color-background-subtle: #f8fafc;
+
+   --surface-sidebar: #f8fafc;
+   --surface-header: #f8fafc;
+   --surface-card: #ffffff;
+   --surface-card-hover: #fbfdff;
+   --surface-input: #f8fafc;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #f1f5f9;
+   --surface-nested: #e8effa;
+   --surface-nested-hover: #dbe7f7;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #3b82f6;
+   --color-primary-hover: #2563eb;
+   --color-primary-soft: #eff6ff;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #0f172a;
+   --text-secondary: #475569;
+   --text-tertiary: #64748b;
+   --text-muted: #94a3b8;
+
+   --icon-primary: #334155;
+   --icon-secondary: #64748b;
+   --icon-muted: #94a3b8;
+   --icon-accent: #3b82f6;
+}
+
+/* --------------------------------------------------------------------------
+   2. LAVENDER THEME (White Background + Soft Purple/Violet)
+   -------------------------------------------------------------------------- */
+[data-theme="lavender"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #faf8ff;
+
+   --surface-sidebar: #faf8ff;
+   --surface-header: #faf8ff;
+   --surface-card: #ffffff;
+   --surface-card-hover: #fcfaff;
+   --surface-input: #faf8ff;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #f4f1f9;
+   --surface-nested: #eae4f5;
+   --surface-nested-hover: #dfd6f0;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #8b5cf6;
+   --color-primary-hover: #7c3aed;
+   --color-primary-soft: #f5f3ff;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #1e152a;
+   --text-secondary: #4a3e59;
+   --text-tertiary: #6e5e82;
+   --text-muted: #9f8fb5;
+
+   --icon-primary: #362947;
+   --icon-secondary: #6e5e82;
+   --icon-muted: #9f8fb5;
+   --icon-accent: #8b5cf6;
+}
+
+/* --------------------------------------------------------------------------
+   3. MINT THEME (White Background + Fresh Emerald Mint)
+   -------------------------------------------------------------------------- */
+[data-theme="mint"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #f4fbf8;
+
+   --surface-sidebar: #f4fbf8;
+   --surface-header: #f4fbf8;
+   --surface-card: #ffffff;
+   --surface-card-hover: #f6fcf9;
+   --surface-input: #f4fbf8;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #f0fdf4;
+   --surface-nested: #ebf6f1;
+   --surface-nested-hover: #dceee5;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #10b981;
+   --color-primary-hover: #059669;
+   --color-primary-soft: #ecfdf5;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #062c21;
+   --text-secondary: #2d5549;
+   --text-tertiary: #497669;
+   --text-muted: #83b0a2;
+
+   --icon-primary: #153e32;
+   --icon-secondary: #497669;
+   --icon-muted: #83b0a2;
+   --icon-accent: #10b981;
+}
+
+/* --------------------------------------------------------------------------
+   4. PEACH THEME (White Background + Coral Peach Accent)
+   -------------------------------------------------------------------------- */
+[data-theme="peach"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #fffaf7;
+
+   --surface-sidebar: #fffaf7;
+   --surface-header: #fffaf7;
+   --surface-card: #ffffff;
+   --surface-card-hover: #fffaf8;
+   --surface-input: #fffaf7;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #fff7ed;
+   --surface-nested: #f7ede6;
+   --surface-nested-hover: #f0ded3;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #f97316;
+   --color-primary-hover: #ea580c;
+   --color-primary-soft: #fff7ed;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #2c1a11;
+   --text-secondary: #573e31;
+   --text-tertiary: #7d5e4f;
+   --text-muted: #b09181;
+
+   --icon-primary: #3d261b;
+   --icon-secondary: #7d5e4f;
+   --icon-muted: #b09181;
+   --icon-accent: #f97316;
+}
+
+/* --------------------------------------------------------------------------
+   5. SOFT YELLOW THEME (White Background + Warm Golden Amber)
+   -------------------------------------------------------------------------- */
+[data-theme="yellow"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #fffdf5;
+
+   --surface-sidebar: #fffdf5;
+   --surface-header: #fffdf5;
+   --surface-card: #ffffff;
+   --surface-card-hover: #fffdf5;
+   --surface-input: #fffdf5;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #fefce8;
+   --surface-nested: #f7f3e1;
+   --surface-nested-hover: #eee8ce;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #d97706;
+   --color-primary-hover: #b45309;
+   --color-primary-soft: #fefce8;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #281d07;
+   --text-secondary: #524320;
+   --text-tertiary: #796637;
+   --text-muted: #ab9869;
+
+   --icon-primary: #3b2c0b;
+   --icon-secondary: #796637;
+   --icon-muted: #ab9869;
+   --icon-accent: #d97706;
+}
+
+/* --------------------------------------------------------------------------
+   6. ROSE THEME (White Background + Vibrant Rose Accent)
+   -------------------------------------------------------------------------- */
+[data-theme="rose"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #fff8fa;
+
+   --surface-sidebar: #fff8fa;
+   --surface-header: #fff8fa;
+   --surface-card: #ffffff;
+   --surface-card-hover: #fffafd;
+   --surface-input: #fff8fa;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #fff1f2;
+   --surface-nested: #f7ebf0;
+   --surface-nested-hover: #eedbe3;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #f43f5e;
+   --color-primary-hover: #e11d48;
+   --color-primary-soft: #fff1f2;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #2c121a;
+   --text-secondary: #593340;
+   --text-tertiary: #804f61;
+   --text-muted: #b38596;
+
+   --icon-primary: #3d1c27;
+   --icon-secondary: #804f61;
+   --icon-muted: #b38596;
+   --icon-accent: #f43f5e;
+}
+
+/* --------------------------------------------------------------------------
+   7. BLUE-REDD THEME (White Background + Sky Blue & Coral Pink)
+   -------------------------------------------------------------------------- */
+[data-theme="blue-redd"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #f4f8fe;
+
+   --surface-sidebar: #f4f8fe;
+   --surface-header: #f4f8fe;
+   --surface-card: #ffffff;
+   --surface-card-hover: #F8FAFF;
+   --surface-input: #f4f8fe;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #F4F8FE;
+   --surface-nested: #EAF3FF;
+   --surface-nested-hover: #DCEBFF;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #3B7BE8;
+   --color-primary-hover: #2563EB;
+   --color-primary-soft: #EBF3FF;
+   --color-primary-subtle: transparent;
+
+   --color-rose-soft: #FFF0F2;
+   --color-rose-accent: #FF6B81;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #0F172A;
+   --text-secondary: #334155;
+   --text-tertiary: #64748B;
+   --text-muted: #94A3B8;
+
+   --icon-primary: #1E293B;
+   --icon-secondary: #64748B;
+   --icon-muted: #94A3B8;
+   --icon-accent: #3B7BE8;
+}
+
+/* --------------------------------------------------------------------------
+   8. DISPUTE-FOX THEME (White Background + DisputeFox Emerald)
+   -------------------------------------------------------------------------- */
+[data-theme="dispute-fox"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #f6faf5;
+
+   --surface-sidebar: #f6faf5;
+   --surface-header: #f6faf5;
+   --surface-card: #ffffff;
+   --surface-card-hover: #f9fbf8;
+   --surface-input: #f6faf5;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #f6f9f4;
+   --surface-nested: #e3f0e0;
+   --surface-nested-hover: #d2e7ce;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #16a34a;
+   --color-primary-hover: #15803d;
+   --color-primary-soft: #ecfdf5;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #111827;
+   --text-secondary: #374151;
+   --text-tertiary: #6b7280;
+   --text-muted: #9ca3af;
+
+   --icon-primary: #111827;
+   --icon-secondary: #4b5563;
+   --icon-muted: #9ca3af;
+   --icon-accent: #16a34a;
+}
+
+/* --------------------------------------------------------------------------
+   9. SAGE MINT THEME (White Background + Sage & Mint Forest)
+   -------------------------------------------------------------------------- */
+[data-theme="sage-mint"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #f3f8f2;
+
+   --surface-sidebar: #f3f8f2;
+   --surface-header: #f3f8f2;
+   --surface-card: #ffffff;
+   --surface-card-hover: #F6FBF5;
+   --surface-input: #f3f8f2;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #F2F8F1;
+   --surface-nested: #E0F2DD;
+   --surface-nested-hover: #CEEAC9;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #059669;
+   --color-primary-hover: #047857;
+   --color-primary-soft: #E6FCE8;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #0F1E13;
+   --text-secondary: #2D4031;
+   --text-tertiary: #526656;
+   --text-muted: #829686;
+
+   --icon-primary: #0F1E13;
+   --icon-secondary: #526656;
+   --icon-muted: #829686;
+   --icon-accent: #059669;
+}
+
+/* --------------------------------------------------------------------------
+   10. ROYAL BLUE PASTEL THEME (White Background + Royal Blue Accent)
+   -------------------------------------------------------------------------- */
+[data-theme="royal-blue"] {
+   --color-background: #ffffff;
+   --color-background-subtle: #f4f7fe;
+
+   --surface-sidebar: #f4f7fe;
+   --surface-header: #f4f7fe;
+   --surface-card: #ffffff;
+   --surface-card-hover: #F8FAFF;
+   --surface-input: #f4f7fe;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #ffffff;
+   --surface-muted: #F2F7FE;
+   --surface-nested: #e2effd;
+   --surface-nested-hover: #d2e4fc;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #1D4ED8;
+   --color-primary-hover: #1E40AF;
+   --color-primary-soft: #BAD8FF;
+   --color-primary-subtle: transparent;
+
+   --border-default: transparent;
+   --border-subtle: transparent;
+   --border-strong: transparent;
+   --border-color: transparent;
+
+   --text-primary: #0F172A;
+   --text-secondary: #1E293B;
+   --text-tertiary: #475569;
+   --text-muted: #8395B0;
+
+   --icon-primary: #0F172A;
+   --icon-secondary: #475569;
+   --icon-muted: #8395B0;
+   --icon-accent: #1D4ED8;
+}
+
+/* --------------------------------------------------------------------------
+   11. MATERIAL ORANGE THEME (Dark Sidebar + Vibrant Orange Accent)
+   -------------------------------------------------------------------------- */
+[data-theme="material-orange"] {
+   --color-background: #f1f5f9;
+   --color-background-subtle: #f8fafc;
+
+   --surface-sidebar: #0f172a;
+   --surface-sidebar-text: #ffffff;
+   --surface-sidebar-text-muted: #94a3b8;
+   --surface-sidebar-hover: #1e293b;
+   --surface-sidebar-active-bg: #ea580c;
+   
+   --surface-header: #ffffff;
+   --surface-card: #ffffff;
+   --surface-card-hover: #f8fafc;
+   --surface-input: #ffffff;
+   --surface-elevated: #ffffff;
+
+   --surface-page: #f1f5f9;
+   --surface-muted: #f8fafc;
+   --surface-nested: #f1f5f9;
+   --surface-nested-hover: #e2e8f0;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #ea580c;
+   --color-primary-hover: #c2410c;
+   --color-primary-soft: #ffedd5;
+   --color-primary-subtle: transparent;
+
+   --border-default: #e2e8f0;
+   --border-subtle: #f1f5f9;
+   --border-strong: #cbd5e1;
+   --border-color: #e2e8f0;
+
+   --text-primary: #0f172a;
+   --text-secondary: #475569;
+   --text-tertiary: #64748b;
+   --text-muted: #94a3b8;
+
+   --icon-primary: #334155;
+   --icon-secondary: #64748b;
+   --icon-muted: #94a3b8;
+   --icon-accent: #ea580c;
+}
+
+/* --------------------------------------------------------------------------
+   12. OBSIDIAN LUXE DARK THEME
+   -------------------------------------------------------------------------- */
+[data-theme="obsidian"],
+.dark {
+   --color-background: #090d16;
+   --color-background-subtle: #0b1120;
+
+   --surface-sidebar: #0b1120;
+   --surface-header: #0b1120;
+   --surface-card: #111827;
+   --surface-card-hover: #1e293b;
+   --surface-input: #1e293b;
+   --surface-elevated: #1e293b;
+
+   --surface-page: #090d16;
+   --surface-muted: #1e293b;
+   --surface-nested: #1f293d;
+   --surface-nested-hover: #334155;
+
+   --surface-level-1: var(--surface-page);
+   --surface-level-2: var(--surface-muted);
+   --surface-level-3: var(--surface-nested);
+   --surface-level-3-hover: var(--surface-nested-hover);
+   --surface-level-3-border: transparent;
+
+   --color-primary: #3b82f6;
+   --color-primary-hover: #60a5fa;
+   --color-primary-soft: rgba(59, 130, 246, 0.15);
+   --color-primary-subtle: rgba(59, 130, 246, 0.25);
+
+   --border-default: #1f293d;
+   --border-subtle: #111827;
+   --border-strong: #334155;
+   --border-color: #1f293d;
+
+   --text-primary: #f8fafc;
+   --text-secondary: #cbd5e1;
+   --text-tertiary: #94a3b8;
+   --text-muted: #64748b;
+
+   --icon-primary: #f8fafc;
+   --icon-secondary: #94a3b8;
+   --icon-muted: #64748b;
+   --icon-accent: #3b82f6;
+}

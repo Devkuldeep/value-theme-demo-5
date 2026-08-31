@@ -1,0 +1,214 @@
+/* ==========================================================================
+   SEMANTIC DESIGN TOKENS - VALUE CONSTRUCTIONS CRM (PANZE STUDIO SKIN)
+   Maps raw primitive tokens to meaningful UI intent (surfaces, text, status).
+   All components reference these semantic variables or theme overrides.
+   ========================================================================== */
+
+:root {
+  /* ----------------------------------------------------------------------
+     2.1 TYPOGRAPHY SYSTEM
+     ---------------------------------------------------------------------- */
+  --font-family: var(--primitive-font-family-sans);
+  --font-size-xs: 0.75rem;     /* 12px - Metadata, badges */
+  --font-size-sm: 0.8125rem;   /* 13px - Secondary body text */
+  --font-size-md: 0.875rem;    /* 14px - Primary body text / Buttons */
+  --font-size-base: 0.9375rem; /* 15px - Large text / Inputs */
+  --font-size-lg: 1.125rem;    /* 18px - Card & section headers */
+  --font-size-xl: 1.375rem;    /* 22px - Subheadings */
+  --font-size-2xl: 1.625rem;   /* 26px - Main page titles */
+
+  --font-weight-regular: var(--primitive-font-weight-regular);
+  --font-weight-medium: var(--primitive-font-weight-medium);
+  --font-weight-semibold: var(--primitive-font-weight-semibold);
+  --font-weight-bold: var(--primitive-font-weight-bold);
+  --font-weight-extrabold: var(--primitive-font-weight-extrabold);
+
+  --line-height-tight: var(--primitive-line-height-tight);
+  --line-height-normal: var(--primitive-line-height-normal);
+  --line-height-relaxed: var(--primitive-line-height-relaxed);
+
+  /* ----------------------------------------------------------------------
+     2.2 DELIBERATE Z-INDEX SCALE
+     ---------------------------------------------------------------------- */
+  --z-base: 0;
+  --z-sidebar: 40;
+  --z-header: 50;
+  --z-dropdown: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+
+  /* ----------------------------------------------------------------------
+     2.3 COLOR & SURFACE SEMANTICS (Panze Studio mapping)
+     ---------------------------------------------------------------------- */
+  --surface-page: var(--primitive-panze-shell-bg);
+  --surface-card: var(--primitive-panze-card-bg);
+  --surface-hover: #f8fafc;
+  --surface-muted: #f1f5f9;
+  --surface-nested: #f0f7fe;
+  --surface-nested-hover: #dbeafe;
+
+  /* Panze Shell & Ambient Backdrop */
+  --bg-ambient-1: rgba(254, 169, 102, 0.42);
+  --bg-ambient-2: rgba(162, 209, 248, 0.38);
+  --bg-canvas: var(--primitive-panze-canvas-bg);
+  --shell-bg: var(--primitive-panze-shell-bg);
+  --shell-border: var(--primitive-panze-shell-border);
+
+  /* Application Canvas Backgrounds */
+  --color-background: var(--surface-page);
+  --color-background-subtle: var(--primitive-slate-100);
+
+  /* Surface Hierarchy */
+  --surface-sidebar: #ffffff;
+  --surface-header: #ffffff;
+  --surface-card-hover: var(--surface-hover);
+  --surface-input: #ffffff;
+  --surface-elevated: #ffffff;
+
+  /* Nested Surface Levels */
+  --surface-level-1: var(--surface-page);
+  --surface-level-2: var(--surface-muted);
+  --surface-level-3: var(--surface-nested);
+  --surface-level-3-hover: var(--surface-nested-hover);
+  --surface-level-3-border: #f0f4f8;
+
+  /* Brand / Primary Accent */
+  --color-primary: var(--primitive-blue-500);
+  --color-primary-hover: var(--primitive-blue-600);
+  --color-primary-soft: var(--primitive-blue-50);
+  --color-primary-subtle: rgba(0, 132, 255, 0.1);
+
+  /* Panze Pill Controls */
+  --pill-active-bg: var(--primitive-panze-dark);
+  --pill-active-text: #ffffff;
+  --pill-idle-bg: #ffffff;
+  --pill-idle-border: #e2e8f0;
+  --pill-idle-text: #334155;
+  --pill-hover-bg: #f8fafc;
+
+  /* Text hierarchy */
+  --text-primary: var(--primitive-panze-ink);
+  --text-secondary: var(--primitive-panze-slate);
+  --text-tertiary: var(--primitive-panze-muted);
+  --text-muted: var(--primitive-panze-subtle);
+  --text-on-accent: var(--primitive-white);
+
+  /* Border hierarchy */
+  --border-default: var(--primitive-panze-card-border);
+  --border-subtle: #f0f4f8;
+  --border-strong: #cbd5e1;
+  --border-color: var(--border-default);
+
+  /* Status System */
+  --color-success: var(--primitive-emerald-500);
+  --color-success-soft: var(--primitive-emerald-50);
+  --color-success-border: var(--primitive-emerald-200);
+  --color-success-text: var(--primitive-emerald-700);
+
+  --color-warning: var(--primitive-amber-500);
+  --color-warning-soft: var(--primitive-amber-50);
+  --color-warning-border: var(--primitive-amber-200);
+  --color-warning-text: var(--primitive-amber-700);
+
+  --color-danger: var(--primitive-red-500);
+  --color-danger-soft: var(--primitive-red-50);
+  --color-danger-border: var(--primitive-red-200);
+  --color-danger-text: var(--primitive-red-700);
+
+  --color-info: var(--primitive-cyan-500);
+  --color-info-soft: var(--primitive-cyan-50);
+  --color-info-border: var(--primitive-cyan-200);
+  --color-info-text: var(--primitive-cyan-700);
+
+  /* Status Badge Aliases for project domain */
+  --status-planning-bg: var(--primitive-blue-50);
+  --status-planning-text: var(--primitive-blue-600);
+  --status-planning-border: var(--primitive-blue-200);
+
+  --status-onsite-bg: var(--primitive-emerald-50);
+  --status-onsite-text: var(--primitive-emerald-600);
+  --status-onsite-border: var(--primitive-emerald-200);
+
+  --status-handedover-bg: var(--primitive-purple-50);
+  --status-handedover-text: var(--primitive-purple-600);
+  --status-handedover-border: var(--primitive-purple-200);
+
+  --status-warning-bg: var(--primitive-amber-50);
+  --status-warning-text: var(--primitive-amber-600);
+  --status-warning-border: var(--primitive-amber-200);
+
+  --status-danger-bg: var(--primitive-red-50);
+  --status-danger-text: var(--primitive-red-600);
+  --status-danger-border: var(--primitive-red-200);
+
+  /* Icon system */
+  --icon-primary: var(--primitive-panze-slate);
+  --icon-secondary: var(--primitive-panze-muted);
+  --icon-muted: var(--primitive-panze-subtle);
+  --icon-accent: var(--primitive-blue-500);
+
+  /* Pastels Category surfaces (Panze Task Tints) */
+  --surface-blue-soft: #f0f7fe;
+  --surface-lavender-soft: #faf5ff;
+  --surface-mint-soft: #f0fdf4;
+  --surface-peach-soft: #fff6ee;
+  --surface-yellow-soft: #fff6ee;
+  --surface-rose-soft: #fef2f2;
+
+  /* Avatars (CRM Indian context fallback values) */
+  --avatar-blue-bg: var(--primitive-blue-100);
+  --avatar-blue-fg: var(--primitive-blue-800);
+  --avatar-green-bg: var(--primitive-emerald-100);
+  --avatar-green-fg: var(--primitive-emerald-800);
+  --avatar-purple-bg: var(--primitive-purple-100);
+  --avatar-purple-fg: var(--primitive-purple-800);
+  --avatar-orange-bg: var(--primitive-orange-100);
+  --avatar-orange-fg: var(--primitive-orange-800);
+  --avatar-red-bg: var(--primitive-red-100);
+  --avatar-red-fg: var(--primitive-red-800);
+
+  /* ----------------------------------------------------------------------
+     2.4 INTERACTION & FOCUS STATES
+     ---------------------------------------------------------------------- */
+  --interactive-hover-bg: #f8fafc;
+  --interactive-active-bg: #f1f5f9;
+
+  --interactive-disabled-bg: var(--primitive-slate-100);
+  --interactive-disabled-fg: var(--primitive-slate-400);
+  --interactive-disabled-border: var(--primitive-slate-200);
+
+  --interactive-selected-bg: var(--primitive-panze-dark);
+  --interactive-selected-fg: #ffffff;
+
+  --focus-ring-color: var(--color-primary);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+
+  /* ----------------------------------------------------------------------
+     2.5 COMPONENT TOKENS (Panze Studio Component Scale)
+     ---------------------------------------------------------------------- */
+  --component-card-bg: var(--surface-card);
+  --component-card-bg-hover: var(--surface-card-hover);
+  --component-card-radius: var(--radius-card);
+  --component-card-border: var(--border-default);
+
+  --component-button-primary-bg: var(--pill-active-bg);
+  --component-button-primary-bg-hover: #1e293b;
+  --component-button-primary-fg: #ffffff;
+  --component-button-secondary-bg: var(--pill-idle-bg);
+  --component-button-secondary-bg-hover: var(--pill-hover-bg);
+  --component-button-secondary-fg: var(--pill-idle-text);
+  --component-button-radius: var(--radius-pill);
+
+  --component-input-bg: #ffffff;
+  --component-input-radius: var(--radius-pill);
+  --component-input-border: #e2e8f0;
+  --component-input-border-focus: var(--color-primary);
+
+  --component-sidebar-bg: #ffffff;
+  --component-sidebar-border: #f0f4f8;
+
+  --component-header-bg: transparent;
+  --component-header-border: transparent;
+}
+
