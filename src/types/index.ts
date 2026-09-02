@@ -32,6 +32,25 @@ export interface Task {
   completed: boolean;
 }
 
+export type IssueCategory = 'Material Delay' | 'Labor Shortage' | 'Design Clarification' | 'Weather Impact' | 'Safety Flag' | 'Quality Defect';
+
+export interface ProgressUpdate {
+  id: string;
+  milestoneId: string;
+  author: string;
+  authorRole: string;
+  date: string;
+  timestamp: string;
+  notes: string;
+  progressPercentage: number;
+  flaggedIssue?: {
+    category: IssueCategory;
+    severity: 'Low' | 'Medium' | 'High';
+    description: string;
+  };
+  attachments?: string[];
+}
+
 export interface Milestone {
   id: string;
   title: string;
@@ -44,6 +63,8 @@ export interface Milestone {
   dueDate: string;
   status: MilestoneStatus;
   tasks: Task[];
+  archived?: boolean;
+  progressUpdates?: ProgressUpdate[];
 }
 
 export interface DocumentVersion {

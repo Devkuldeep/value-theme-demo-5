@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Project, DetailTabId, ActiveModuleId, Milestone, Task, ProjectDocument, TeamMember } from '../types';
+import { Project, DetailTabId, ActiveModuleId, Milestone, Task, ProjectDocument, TeamMember, ProgressUpdate } from '../types';
 import { INITIAL_PROJECTS } from '../data/seedData';
 
 interface ProjectContextType {
@@ -40,6 +40,11 @@ interface ProjectContextType {
   toggleTaskCompletion: (projectId: string, milestoneId: string, taskId: string) => void;
   addTaskToMilestone: (projectId: string, milestoneId: string, task: Omit<Task, 'id' | 'milestoneId'>) => void;
   addMilestoneToProject: (projectId: string, milestone: Omit<Milestone, 'id' | 'tasks' | 'openTaskCount' | 'doneTaskCount'>) => void;
+  duplicateMilestone: (projectId: string, milestoneId: string) => void;
+  moveMilestone: (projectId: string, milestoneId: string, direction: 'up' | 'down') => void;
+  toggleArchiveMilestone: (projectId: string, milestoneId: string) => void;
+  deleteMilestone: (projectId: string, milestoneId: string) => void;
+  addProgressUpdate: (projectId: string, milestoneId: string, update: Omit<ProgressUpdate, 'id'>) => void;
   addDocumentToProject: (projectId: string, document: Omit<ProjectDocument, 'id'>) => void;
   addTeamMemberToProject: (projectId: string, member: Omit<TeamMember, 'id'>) => void;
 }
@@ -52,7 +57,7 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
   const [activeDetailTab, setActiveDetailTab] = useState<DetailTabId>('overview');
   const [selectedMilestoneId, setSelectedMilestoneId] = useState<string | null>('ms-101');
-  const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
+  const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(false);
   const [theme, setThemeState] = useState<string>('blue');
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
@@ -192,6 +197,83 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
     );
   };
 
+  const duplicateMilestone = (projectId: string, milestoneId: string) => {
+    setProjects((prev) =>
+      prev.map((proj) => {
+        if (proj.id !== projectId) return proj;
+        const target = proj.milestones.find((m) => m.id === milestoneId);
+        if (!target) return proj;
+        const copy: Milestone = {
+          ...target,
+          id: `ms-${Date.now()}`,
+          title: `${target.title} (Copy)`,
+        };
+        return { ...proj, milestones: [...proj.milestones, copy] };
+      })
+    );
+  };
+
+  const moveMilestone = (projectId: string, milestoneId: string, direction: 'up' | 'down') => {
+    setProjects((prev) =>
+      prev.map((proj) => {
+        if (proj.id !== projectId) return proj;
+        const index = proj.milestones.findIndex((m) => m.id === milestoneId);
+        if (index === -1) return proj;
+        const targetIndex = direction === 'up' ? index - 1 : index + 1;
+        if (targetIndex < 0 || targetIndex >= proj.milestones.length) return proj;
+
+        const updated = [...proj.milestones];
+        const [moved] = updated.splice(index, 1);
+        updated.splice(targetIndex, 0, moved);
+        return { ...proj, milestones: updated };
+      })
+    );
+  };
+
+  const toggleArchiveMilestone = (projectId: string, milestoneId: string) => {
+    setProjects((prev) =>
+      prev.map((proj) => {
+        if (proj.id !== projectId) return proj;
+        const updated = proj.milestones.map((m) => {
+          if (m.id !== milestoneId) return m;
+          return { ...m, archived: !m.archived };
+        });
+        return { ...proj, milestones: updated };
+      })
+    );
+  };
+
+  const deleteMilestone = (projectId: string, milestoneId: string) => {
+    setProjects((prev) =>
+      prev.map((proj) => {
+        if (proj.id !== projectId) return proj;
+        return { ...proj, milestones: proj.milestones.filter((m) => m.id !== milestoneId) };
+      })
+    );
+  };
+
+  const addProgressUpdate = (projectId: string, milestoneId: string, updateData: Omit<ProgressUpdate, 'id'>) => {
+    setProjects((prev) =>
+      prev.map((proj) => {
+        if (proj.id !== projectId) return proj;
+        const updatedMilestones = proj.milestones.map((m) => {
+          if (m.id !== milestoneId) return m;
+          const newUpdate: ProgressUpdate = {
+            ...updateData,
+            id: `upd-${Date.now()}`,
+          };
+          const existingUpdates = m.progressUpdates || [];
+          return {
+            ...m,
+            completionPercentage: updateData.progressPercentage,
+            progressUpdates: [newUpdate, ...existingUpdates],
+          };
+        });
+        return { ...proj, milestones: updatedMilestones };
+      })
+    );
+  };
+
   const addDocumentToProject = (projectId: string, docData: Omit<ProjectDocument, 'id'>) => {
     setProjects((prev) =>
       prev.map((proj) => {
@@ -253,6 +335,11 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
         toggleTaskCompletion,
         addTaskToMilestone,
         addMilestoneToProject,
+        duplicateMilestone,
+        moveMilestone,
+        toggleArchiveMilestone,
+        deleteMilestone,
+        addProgressUpdate,
         addDocumentToProject,
         addTeamMemberToProject,
       }}
