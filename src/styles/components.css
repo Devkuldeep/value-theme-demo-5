@@ -30,12 +30,6 @@
         var(--bg-canvas, #ebf1f6);
 }
 
-@media (max-width: 640px) {
-    .main-container-layout {
-        padding: 10px 8px;
-    }
-}
-
 
 /* --------------------------------------------------------------------------
    2. PANZE CARDS (Curved Surface Cards with Soft Shadows)

@@ -51,7 +51,7 @@ export const Sidebar: React.FC = () => {
 
   return (
     <aside
-      className={`hidden md:flex sticky top-0 h-screen shrink-0 overflow-y-auto scrollbar-none bg-white/80 backdrop-blur-md border-r border-slate-200/70 shadow-[0_4px_20px_rgba(15,23,42,0.03)] flex-col transition-all duration-300 z-40 ${
+      className={`sticky top-0 h-screen shrink-0 overflow-y-auto scrollbar-none bg-white/80 backdrop-blur-md border-r border-slate-200/70 shadow-[0_4px_20px_rgba(15,23,42,0.03)] flex flex-col transition-all duration-300 z-40 ${
         isSidebarCollapsed ? 'w-[64px] p-2.5 items-center' : 'w-64 p-4'
       }`}
     >

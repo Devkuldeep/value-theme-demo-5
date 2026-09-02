@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useProjectContext } from '../context/ProjectContext';
 import { ProjectHeader } from '../components/project-list/ProjectHeader';
 import { ProjectFilterBar } from '../components/project-list/ProjectFilterBar';
@@ -20,12 +20,6 @@ export const ProjectListPage: React.FC = () => {
   } = useProjectContext();
 
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
-
-  useEffect(() => {
-    const handleOpen = () => setIsCreateModalOpen(true);
-    window.addEventListener('open-create-project-modal', handleOpen);
-    return () => window.removeEventListener('open-create-project-modal', handleOpen);
-  }, []);
 
   // Filter projects based on user controls
   const filteredProjects = projects.filter((p) => {
